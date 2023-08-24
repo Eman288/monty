@@ -1,4 +1,5 @@
 #include "monty.h"
+#define _GNU_SOURCE
 /**
 *main - the main function code
 *@argc: number of arguments
@@ -8,7 +9,7 @@
 data d = {0, NULL, NULL};
 int main(int argc, char *argv[])
 {
-	int line_num, i;
+	int line_num, m;
 
 	FILE *fo;
 
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
 	char *buff = NULL;
 
 	line_num = 0;
+	m = 1;
 	if (argc < 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -31,18 +33,19 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	d.fp = fo;
-	while (getline(&buff, &n, fo) != -1)
+	while (m != -1)
 	{
 		line_num++;
-		if (is_space(buff) == 0)
+		buff = NULL;
+		m = getline(&buff, &n, fo);
+		if (is_space(buff) == 0 && m != -1)
 		{
-			i = exe(buff, line_num, &stack);
-			if (i == -1)
-				buff = NULL;
+			exe(buff, line_num, &stack);
 		}
+		free(buff);
 	}
-	free(buff);
 	fclose(fo);
-	free(stack);
+	free(d.values);
+	_free(&stack);
 	return (0);
 }

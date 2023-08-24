@@ -24,11 +24,7 @@ int exe(char *line, int line_num, stack_t **head)
 	};
 	token = strtok(line, " \n\t");
 	d.values = strtok(NULL, " \n\t");
-	if (token == NULL)
-	{
-		return (-1);
-	}
-	for (i = 0; str_func[i].opcode; i++)
+	for (i = 0; str_func[i].opcode && token; i++)
 	{
 		if (strcmp(str_func[i].opcode, token) == 0)
 		{
@@ -36,9 +32,13 @@ int exe(char *line, int line_num, stack_t **head)
 			return (0);
 		}
 	}
-	fclose(d.fp);
-	free(d.values);
-	_free(head);
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
-	exit(EXIT_FAILURE);
+	if(str_func[i].opcode == NULL && token != NULL)
+	{
+		fclose(d.fp);
+		free(line);
+		_free(head);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
+		exit(EXIT_FAILURE);
+	}
+	return (-1);
 }

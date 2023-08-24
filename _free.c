@@ -8,14 +8,10 @@ void _free(stack_t **head)
 	stack_t *temp;
 
 	temp = *head;
-	if (temp == NULL)
-		return;
-	while (temp->next != NULL)
+	while (temp != NULL)
 	{
 		temp = temp->next;
-	       free(temp->prev);
+	       free(*head);
+	       *head = temp;
 	}
-	if (temp != NULL)
-		free(temp);
-	free(head);
 }
