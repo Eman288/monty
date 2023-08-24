@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		{
 			i = exe(buff, line_num, &stack);
 			if (i == -1)
-				exit(0);
+				buff = NULL;
 		}
 	}
 	free(buff);
