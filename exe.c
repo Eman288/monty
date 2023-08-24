@@ -15,6 +15,7 @@ int exe(char *line, int line_num, stack_t **head)
 	instruction_t str_func[] = {
 		{"push", is_push},
 	      {"pall", pall},
+	      {"pint", pint},
 		{NULL, NULL}
 	};
 	token = strtok(line, " \n\t");
@@ -29,7 +30,7 @@ int exe(char *line, int line_num, stack_t **head)
 	}
 	fclose(d.fp);
 	free(d.values);
-	free(head);
+	_free(head);
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
 	exit(EXIT_FAILURE);
 }

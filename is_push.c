@@ -25,7 +25,7 @@ void is_push(stack_t **head, unsigned int line_num)
 			fprintf(stderr, "L%d: unknown instruction push integer\n", line_num);
 			fclose(d.fp);
 			free(d.values);
-			free(head);
+			_free(head);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -34,7 +34,7 @@ void is_push(stack_t **head, unsigned int line_num)
 		fprintf(stderr, "L%d: unknown instruction push integer\n", line_num);
 		fclose(d.fp);
 		free(d.values);
-		free(head);
+		_free(head);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(d.values);
