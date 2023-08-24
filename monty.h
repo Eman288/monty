@@ -60,4 +60,5 @@ void pall(stack_t **head, unsigned int line_num);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void pint(stack_t **head, unsigned int line_num);
 void _free(stack_t **head);
+void pop(stack_t **head, unsigned int line_num);
 #endif
