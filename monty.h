@@ -62,4 +62,6 @@ void pint(stack_t **head, unsigned int line_num);
 void _free(stack_t **head);
 void pop(stack_t **head, unsigned int line_num);
 void nop(stack_t **head, unsigned int line_num);
+int is_space(char *str);
+void swap(stack_t **head, unsigned int line_num);
 #endif

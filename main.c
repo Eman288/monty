@@ -34,9 +34,12 @@ int main(int argc, char *argv[])
 	while (getline(&buff, &n, fo) != -1)
 	{
 		line_num++;
-		i = exe(buff, line_num, &stack);
-		if (i == -1)
-			exit(0);
+		if (is_space(buff) == 0)
+		{
+			i = exe(buff, line_num, &stack);
+			if (i == -1)
+				exit(0);
+		}
 	}
 	free(buff);
 	fclose(fo);

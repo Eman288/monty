@@ -17,6 +17,7 @@ int exe(char *line, int line_num, stack_t **head)
 	      {"pall", pall},
 	      {"pint", pint},
 	      {"pop", pop},
+	      {"swap", swap},
 	      {"nop", nop},
 		{NULL, NULL}
 	};
