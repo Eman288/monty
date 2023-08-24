@@ -13,6 +13,10 @@ pall
 
 
 push 7
+add
+nop
+swap
+pop
 pall
 
 

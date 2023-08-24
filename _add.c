@@ -21,9 +21,9 @@ void add(stack_t **head, unsigned int line_num)
 	}
 	else
 	{
-		m = temp->n;
-		pop(head, line_num);
-		temp = *head;
-		temp->n += m;
+		m = temp->n + temp->next->n;
+		temp->next->n = m;
+		*head = temp->next;
+		free(temp);
 	}
 }
