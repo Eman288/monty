@@ -20,6 +20,7 @@ int exe(char *line, int line_num, stack_t **head)
 	      {"swap", swap},
 	      {"add", add},
 	      {"nop", nop},
+	      {"sub", sub},
 		{NULL, NULL}
 	};
 	token = strtok(line, " \n\t");
@@ -35,10 +36,12 @@ int exe(char *line, int line_num, stack_t **head)
 	if(str_func[i].opcode == NULL && token != NULL)
 	{
 		fclose(d.fp);
+		free(token);
 		free(line);
 		_free(head);
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
 		exit(EXIT_FAILURE);
 	}
+	free(token);
 	return (-1);
 }
