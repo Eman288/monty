@@ -21,6 +21,7 @@ int exe(char *line, int line_num, stack_t **head)
 	      {"pchar", pchar},
 	      {"pstr", pstr},
 	      {"rotr", rotr},
+	      {"rotl", rotl},
 		{NULL, NULL}
 	};
 	token = strtok(line, " \n\t");
