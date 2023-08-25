@@ -1,5 +1,2 @@
-#mod
-push 87
-pall
-#hkl
-pall
+push 72
+pchar

@@ -70,4 +70,5 @@ void sub(stack_t **head, unsigned int line_num);
 void _div(stack_t **head, unsigned int line_num);
 void mul(stack_t **head, unsigned int line_num);
 void mod(stack_t **head, unsigned int line_num);
+void pchar(stack_t **head, unsigned int line_num);
 #endif
