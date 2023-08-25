@@ -15,13 +15,12 @@ int exe(char *line, int line_num, stack_t **head)
 	instruction_t str_func[] = {
 		{"push", is_push}, {"pall", pall}, {"pint", pint},
 	      {"pop", pop}, {"swap", swap}, {"add", add},
-	      {"nop", nop},
-	      {"sub", sub},
-	      {"div", _div},
+	      {"nop", nop}, {"sub", sub}, {"div", _div},
 	      {"mul", mul},
 	      {"mod", mod},
 	      {"pchar", pchar},
 	      {"pstr", pstr},
+	      {"rotr", rotr},
 		{NULL, NULL}
 	};
 	token = strtok(line, " \n\t");
