@@ -13,9 +13,7 @@ int exe(char *line, int line_num, stack_t **head)
 	char *token;
 
 	instruction_t str_func[] = {
-		{"push", is_push},
-	      {"pall", pall},
-	      {"pint", pint},
+		{"push", is_push}, {"pall", pall}, {"pint", pint},
 	      {"pop", pop},
 	      {"swap", swap},
 	      {"add", add},
@@ -39,7 +37,7 @@ int exe(char *line, int line_num, stack_t **head)
 			return (0);
 		}
 	}
-	if(str_func[i].opcode == NULL && token != NULL)
+	if (str_func[i].opcode == NULL && token != NULL)
 	{
 		fclose(d.fp);
 		free(token);

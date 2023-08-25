@@ -1,6 +1,7 @@
 #include "monty.h"
 /**
-*main - Entry point
+*is_space - checks if the string contains only spaces
+*@str: the string
 *Return: Always 0 (Success)
 */
 int is_space(char *str)
