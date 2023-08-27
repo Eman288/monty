@@ -16,12 +16,8 @@ int exe(char *line, int line_num, stack_t **head)
 		{"push", is_push}, {"pall", pall}, {"pint", pint},
 	      {"pop", pop}, {"swap", swap}, {"add", add},
 	      {"nop", nop}, {"sub", sub}, {"div", _div},
-	      {"mul", mul},
-	      {"mod", mod},
-	      {"pchar", pchar},
-	      {"pstr", pstr},
-	      {"rotr", rotr},
-	      {"rotl", rotl},
+	      {"mul", mul}, {"mod", mod}, {"pchar", pchar},
+	      {"pstr", pstr}, {"rotr", rotr}, {"rotl", rotl},
 		{NULL, NULL}
 	};
 	token = strtok(line, " \n\t");
