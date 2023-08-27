@@ -34,7 +34,7 @@ void is_push(stack_t **head, unsigned int line_num)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: unknown instruction push integer\n", line_num);
+		fprintf(stderr, "L%d: usage: push integer\n", line_num);
 		fclose(d.fp);
 		free(d.values);
 		_free(head);
