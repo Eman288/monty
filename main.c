@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	size_t n;
 
-	char *buff = NULL;
+	char *buff;
 
 	line_num = 0;
 	m = 1;
@@ -39,13 +39,11 @@ int main(int argc, char *argv[])
 		buff = NULL;
 		m = getline(&buff, &n, fo);
 		if (is_space(buff) == 0 && m != -1)
-		{
 			exe(buff, line_num, &stack);
-		}
 		free(buff);
 	}
 	fclose(fo);
-	free(d.values);
+	/*free(d.values);*/
 	_free(&stack);
 	return (0);
 }

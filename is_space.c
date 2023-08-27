@@ -11,7 +11,7 @@ int is_space(char *str)
 	flag = 1;
 	if (str == NULL)
 		return (1);
-	for (i = 0; str[i]; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ')
 		{
