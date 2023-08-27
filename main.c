@@ -1,12 +1,12 @@
 #include "monty.h"
 #define _GNU_SOURCE
+data d = {0, NULL, NULL};
 /**
 *main - the main function code
 *@argc: number of arguments
 *@argv: the arguments
 *Return: Always 0 (Success)
 */
-data d = {0, NULL, NULL};
 int main(int argc, char *argv[])
 {
 	int line_num, m;
