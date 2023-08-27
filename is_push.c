@@ -42,11 +42,7 @@ void is_push(stack_t **head, unsigned int line_num)
 	}
 	value = atoi(d.values);
 	if (d.mode == 0)
-	{
 		_push(value, head);
-	}
 	else
-	{
 		printf("q");
-	}
 }
