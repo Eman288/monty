@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	line_num = 0;
 	m = 1;
-	if (argc < 2)
+	if (argc < 2 || argc > 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
