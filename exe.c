@@ -23,7 +23,7 @@ int exe(char *line, int line_num, stack_t **head)
 	token = strtok(line, " \n\t");
 	d.values = strtok(NULL, " \n\t");
 	if (token != NULL && token[0] == '#')
-			return (0);
+		return (0);
 	for (i = 0; str_func[i].opcode && token; i++)
 	{
 		if (strcmp(str_func[i].opcode, token) == 0)
