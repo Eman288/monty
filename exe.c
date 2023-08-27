@@ -38,11 +38,10 @@ int exe(char *line, int line_num, stack_t **head)
 	}
 	if (str_func[i].opcode == NULL && token != NULL)
 	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
 		fclose(d.fp);
-		free(token);
 		free(line);
 		_free(head);
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, token);
 		exit(EXIT_FAILURE);
 	}
 	free(token);
